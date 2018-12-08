@@ -1,0 +1,187 @@
+html
+{ height: 100%;}
+
+body
+{ font: normal .78em arial, sans-serif;
+  background: black;
+  color: white;}
+
+p
+{ padding: 0 0 16px 0;
+  line-height: 1.7em;}
+
+img
+{ border: 0;}
+
+h1, h2, h3, h4, h5, h6 
+{ font: normal 175% 'century gothic', arial, sans-serif;
+  color: white;
+  margin: 0 0 15px 0;
+  padding: 15px 0 5px 0;}
+
+h2
+{ font: normal 175% 'century gothic', arial, sans-serif;
+  color: white;}
+
+h4, h5, h6
+{ margin: 0;
+  padding: 0 0 5px 0;
+  font: normal 120% arial, sans-serif;
+  color: white;}
+
+h5, h6
+{ font: italic 95% arial, sans-serif;
+  padding: 0 0 15px 0;
+  color: #000;}
+
+h6
+{ color: white;}
+
+a, a:hover
+{ outline: none;
+  text-decoration: underline;}
+
+a:hover
+{ text-decoration: none;}
+
+
+ul
+{ margin: 2px 0 22px 17px;}
+
+ul li
+{ list-style-type: circle;
+  margin: 0 0 6px 0; 
+  padding: 0 0 4px 5px;}
+
+ol
+{ margin: 8px 0 22px 20px;}
+
+ol li
+{ margin: 0 0 11px 0;}
+
+
+#main
+{ width: 910px;
+  }
+
+#header
+{ width: 890px;
+  }
+
+#logo
+{ width: 890px;
+  position: relative;
+  height: 200px;
+  background: url(logo.gif) no-repeat;}
+
+#logo #logo_teksti 
+{ position: absolute; 
+  top: 0px;
+  left: 30px;}
+
+#logo h1, #logo h2
+{ font: normal 300% 'century gothic', arial, sans-serif;
+  border-bottom: 0;
+  text-transform: none;
+  margin: 0;}
+
+#logo_teksti h1, #logo_teksti h1 a, #logo_teksti h1 a:hover 
+{ padding: 10px 0 0 0;
+  color: #FFF;
+  letter-spacing: 0.1em;
+  text-decoration: none;}
+
+#logo_teksti h1 a .logo_vari
+{ color: #ff0000;}
+
+#logo_teksti h2
+{ font-size: 150%;
+  padding: 0;
+  color: white;}
+
+#menubar
+{ width: 500px;
+  height: 35px;
+  padding: 0 0 0 0;
+  margin: -105px 0 0 0;
+  position: relative;
+  z-index: 1;
+  float: left;} 
+
+ul#menu
+{ float: right;
+  margin: 0;}
+
+ul#menu li
+{ float: left;
+  margin: 5px 0 0 0;
+  padding: 0 0 0 6px;
+  list-style: none;}
+
+ul#menu li a
+{ letter-spacing: 0em;
+  font: normal 105% arial, sans-serif;
+  text-transform: uppercase;
+  display: block; 
+  float: left; 
+  height: 20px;
+  text-decoration: none; 
+  padding: 9px 22px 5px 16px;
+  text-align: center;
+  color: #FFF;
+  border: 0;} 
+
+ul#menu li.selected a
+{ height: 25px;
+  color: white;
+  padding: 7px 22px 5px 16px;}
+
+ul#menu li.selected
+{ margin: 7px 0 0 0;
+}
+
+ul#menu li a:hover
+{ color: white;}
+
+#sivu_sisalto
+{ width: 750px;
+  overflow: hidden;
+  background: url(tahtitausta.gif);} 
+
+.sivu_palkki
+{ float: right;
+  width: 198px;
+  padding: 20px 25px 15px 15px;}
+
+.sivu_palkki ul
+{ width: 178px; 
+  padding: 4px 0 0 0; 
+  margin: 4px 0 30px 0;}
+
+.sivu_palkki li
+{ list-style: none; 
+  padding: 0 0 7px 0; }
+
+.sivu_palkki li a, .sivu_palkki li a:hover
+{ padding: 0 0 0 40px;
+  display: block; }
+
+.sivu_palkki li a.selected
+{ color: #444;
+  text-decoration: none;} 
+
+#sisalto
+{ text-align: left;
+  width: 400x;
+  float: left;
+  ;}
+
+#sisalto ul
+{ margin: 2px 0 22px 0px;}
+
+#sisalto ul li
+{ list-style-type: none;
+  margin: 0 0 6px 0; 
+  padding: 0 0 4px 25px;
+  line-height: 1.5em;}
+  

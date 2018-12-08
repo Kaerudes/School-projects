@@ -33,8 +33,8 @@ public Long getEpisodeId() {
 	return EpisodeId;
 }
 
-public void setEpisodeId(Long episodeId) {
-	EpisodeId = episodeId;
+public void setEpisodeId(Long episodeid) {
+	EpisodeId = episodeid;
 }
 
 public String getName() {

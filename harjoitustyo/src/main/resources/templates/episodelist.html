@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+.content {
+    max-width: 500px;
+    margin: auto;
+}
+</style>
+
+<head>
+  <title>The X-files Database</title>
+  <link rel="stylesheet" type="text/css" href="style.css" title="style" />
+</head>
+
+<body>
+
+<div class="content">
+
+
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <li class="selected"><a href="index.html">Database</a></li>
+            <li><a href="Episodes.html">List of Episodes</a></li>
+            <li><a href="Chars.html"> Characters </a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="sivu_sisalto">
+      <div class="sivu_palkki">
+      
+      </div>
+      <div id="sisalto">
+        <h1>Query results: </h1>
+<table width="700" border="3" >
+		<tr>
+			<td>Id</td>
+			<td>Name</td>
+			<td>Descript</td>
+			<td>Airdate</td>
+            <td>Episode Lenght (Minutes)</td>
+            <td>Views (millions) </td>
+			
+		</tr>
+		<tr th:each="epi : ${episodes}">
+			
+			<td th:text="${epi.episodeId}" /></td>
+				<td th:text="${epi.name}" /></td>
+				<td th:text="${epi.descript}" /></td>
+				<td th:text="${epi.airdate}" /></td>
+				<td th:text="${epi.elenght}" /></td>
+				<td th:text="${epi.views}" /></td>
+                <td><a th:href="@{/editepisode/{id}(id=${epi.EpisodeId})}">Muokkaa</a></td>    		
+ 		<td><a th:href="@{/delete/{id}(id=${epi.EpisodeId})}">Poista</a></td>  		
+			</tr>
+			
+			</table>
+        
+
+        
+      </div>
+    </div>
+    </div>
+<a href="/addepisodes">Add a new episode</a> 
+</div>
+
+</body>
+</html>

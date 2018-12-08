@@ -15,53 +15,54 @@ import com.Harjoitustyo.domain.Episode;
 import com.Harjoitustyo.domain.EpisodeRepository;
 
 
+
 @Controller
 public class EpisodeController {
+	
 	@Autowired
 	private EpisodeRepository repository;
 	
-	 @RequestMapping(value="/episodelist")
+	 @RequestMapping(value="/episodes")
 	    public String EpisodeList(Model model) {	
 	        model.addAttribute("episodes", repository.findAll());
-	        return "studentlist";
+	        return "episodelist";
 	    }
+	 
+	
 	  
-		// RESTful service to get all students
+		// RESTful service to get all Episodes in a json type
 	    @RequestMapping(value="/episodes", method = RequestMethod.GET)
 	    public @ResponseBody List<Episode> EpisodeListRest() {	
 	        return (List<Episode>) repository.findAll();
 	    }    
 
 		// RESTful service to get student by id
-	    @RequestMapping(value="/student/{id}", method = RequestMethod.GET)
+	    @RequestMapping(value="/episode/{id}", method = RequestMethod.GET)
 	    public @ResponseBody Optional<Episode> findStudentRest(@PathVariable("id") Long EpisodeId) {	
 	    	return repository.findById(EpisodeId);
-	    }       
 	    
-	    // Add new student
-	    @RequestMapping(value = "/add")
-	    public String addStudent(Model model){
-	    	model.addAttribute("episode", new Episode());
-	    	model.addAttribute("Episodes", repository.findAll());
-	        return "addEpisode";
-	    }     
-	    
-	    // Save new student
-	    @RequestMapping(value = "/save", method = RequestMethod.POST)
-	    public String save(Episode episode){
-	        repository.save(episode);
-	        return "redirect:episodelist";
-	    }    
+		}
+		
+		@RequestMapping(value = "/episodelist")
+		public String episodeList(Model model) {
+	    	model.addAttribute("episodes", repository.findAll());
+			return "episodelist";
+		}
+		@RequestMapping(value = "/save-episode", method = RequestMethod.POST)
+		public String save2(Episode episode) {
+			repository.save(episode);
+			return "redirect:episodelist";
+		}
 
-	    // Delete student
-	 /*   @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-	    public String deleteEpisode(@PathVariable("id") Long Episode, Model model) {
-	    	repository.deleteById(EpisodeId);
-	        return "redirect:../studentlist";
-	        */
-	    }     
+		@RequestMapping(value = "/addepisodes")
+		public String addepisode(Model model) {
+			model.addAttribute("episode", new Episode());
+			return "addepisodes";
+		}
 
-	
-
-	
-
+		@RequestMapping(value = "/editepisode/{id}")
+		public String editepisode(@PathVariable("id") Long EpisodeId, Model model) {
+			model.addAttribute("episode", repository.findById(EpisodeId));
+			return "editepisode";
+		}
+	}

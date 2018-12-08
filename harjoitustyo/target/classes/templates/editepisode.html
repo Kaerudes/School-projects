@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit an Episode</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+</head>
+<body>
+	<h1>Edit Episode:</h1>
+	
+	<form th:object="${episode}" th:action="@{../save-episode}" action="#" method="post">	
+	<input type="hidden" th:field="*{EpisodeId}" class="form-control"/>
+		  	<label for="type">name: </label>
+			<input type="text" id="name" th:field="*{name}" />
+			<br>
+		  	<label for="type">descript: </label>
+			<input type="text" id="descript" th:field="*{descript}" />
+			<br>
+		  	<label for="type">Airdate: </label>
+			<input type="text" id="airdate" th:field="*{airdate}" />
+			<br>
+			<label for="type">elenght: </label>
+			<input type="text" id="elenght" th:field="*{elenght}" />
+			<br>
+			<label for="type">Views: </label>
+			<input type="text" id="views" th:field="*{views}" />
+	<div>
+
+		
+			<br><input type="submit" value="SAVE"/>
+		</form>
+		
+	</div>
+
+	
+</body>
+</html>

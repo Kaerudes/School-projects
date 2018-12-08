@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add episode</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Add an Episode of the X-files:</h1>
+	<div>
+		<form th:object="${episode}" th:action="@{save-episode}" action="#" method="post">
+	
+		  	<label for="type">name: </label>
+			<input type="text" id="name" th:field="*{name}" />
+			<br>
+		  	<label for="type">descript: </label>
+			<input type="text" id="descript" th:field="*{descript}" />
+			<br>
+		  	<label for="type">Airdate: </label>
+			<input type="text" id="airdate" th:field="*{airdate}" />
+			<br>
+			<label for="type">elenght: </label>
+			<input type="text" id="elenght" th:field="*{elenght}" />
+			<br>
+			<label for="type">Views: </label>
+			<input type="text" id="views" th:field="*{views}" />
+			
+    		<br>
+			<input type="submit" value="Tallenna"></input>
+		</form>
+	</div>
+</body>
+</html>
