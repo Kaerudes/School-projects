@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table width="700" border="3" >
+		<tr>
+			<td>Id</td>
+			<td>Name</td>
+			<td>Descript</td>
+			<td>Airdate</td>
+            <td>Episode Lenght (Minutes)</td>
+            <td>Views (millions) </td>
+			
+		</tr>
+		<tr>
+			
+			<td th:text="${episodeId}" /></td>
+				<td th:text="${name}" /></td>
+				<td th:text="${descript}" /></td>
+				<td th:text="${airdate}" /></td>
+				<td th:text="${elenght}" /></td>
+				<td th:text="${views}" /></td>
+                <td><a th:href="@{/editepisode/{id}(id=${epi.EpisodeId})}">Edit</a></td>    		
+ 		<td><a th:href="@{/delete/{id}(id=${epi.EpisodeId})}">Delete</a></td>  		
+			</tr>
+			
+			</table>
+
+</body>
+</html>

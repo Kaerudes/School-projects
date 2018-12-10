@@ -22,12 +22,8 @@
     <div id="header">
       <div id="logo">
       </div>
-      <div id="menubar">
-        <ul id="menu">
-          <li class="selected"><a href="index.html">Database</a></li>
-            <li><a href="Episodes.html">List of Episodes</a></li>
-            <li><a href="Chars.html"> Characters </a></li>
-        </ul>
+      <div>
+        
       </div>
     </div>
     <div id="sivu_sisalto">
@@ -35,7 +31,14 @@
       
       </div>
       <div id="sisalto">
-        <h1>Query results: </h1>
+        <h1>Full Episodes Of the X-files series: </h1>
+        
+        // TÄÄ EI VITTU TOIMI >:(
+  <form name ="search" method ="GET" th:action="@{findone}"> 
+		<input type="text" id="views" th:field="*{EpisodeId}" />
+		<br><input type="submit" value="SAVE"/>		
+  		</form>
+  
 <table width="700" border="3" >
 		<tr>
 			<td>Id</td>
@@ -48,14 +51,14 @@
 		</tr>
 		<tr th:each="epi : ${episodes}">
 			
-			<td th:text="${epi.episodeId}" /></td>
+			<td th:text="${epi.EpisodeId}" /></td>
 				<td th:text="${epi.name}" /></td>
 				<td th:text="${epi.descript}" /></td>
 				<td th:text="${epi.airdate}" /></td>
 				<td th:text="${epi.elenght}" /></td>
 				<td th:text="${epi.views}" /></td>
-                <td><a th:href="@{/editepisode/{id}(id=${epi.EpisodeId})}">Muokkaa</a></td>    		
- 		<td><a th:href="@{/delete/{id}(id=${epi.EpisodeId})}">Poista</a></td>  		
+                <td><a th:href="@{/editepisode/{id}(id=${epi.EpisodeId})}">Edit</a></td>    		
+ 		<td><a th:href="@{/delete/{id}(id=${epi.EpisodeId})}">Delete</a></td>  		
 			</tr>
 			
 			</table>

@@ -29,12 +29,16 @@ public Episode(String name, String descript, String airdate, String elenght, Str
 	this.views = views;
 }
 
+
+
+
+
 public Long getEpisodeId() {
 	return EpisodeId;
 }
 
-public void setEpisodeId(Long episodeid) {
-	EpisodeId = episodeid;
+public void setEpisodeId(Long episodeId) {
+	EpisodeId = episodeId;
 }
 
 public String getName() {
@@ -77,9 +81,10 @@ public void setViews(String views) {
 	this.views = views;
 }
 
-@Override
-public String toString() {
-	return "Episode [EpisodeId=" + EpisodeId + ", name=" + name + ", descript=" + descript + ", airdate=" + airdate
-			+ ", elenght=" + elenght + ", views=" + views + "]";
+
 }
-}
+
+
+
+
+
