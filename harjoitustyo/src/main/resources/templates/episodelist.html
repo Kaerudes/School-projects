@@ -33,20 +33,16 @@
       <div id="sisalto">
         <h1>Full Episodes Of the X-files series: </h1>
         
-        // TÄÄ EI VITTU TOIMI >:(
-  <form name ="search" method ="GET" th:action="@{findone}"> 
-		<input type="text" id="views" th:field="*{EpisodeId}" />
-		<br><input type="submit" value="SAVE"/>		
-  		</form>
-  
+        
+
 <table width="700" border="3" >
 		<tr>
 			<td>Id</td>
-			<td>Name</td>
-			<td>Descript</td>
+			<td>Title</td>
+			<td>Director</td>
 			<td>Airdate</td>
             <td>Episode Lenght (Minutes)</td>
-            <td>Views (millions) </td>
+            <td>Views in U.S.A (millions) </td>
 			
 		</tr>
 		<tr th:each="epi : ${episodes}">

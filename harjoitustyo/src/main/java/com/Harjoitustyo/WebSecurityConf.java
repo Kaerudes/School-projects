@@ -22,14 +22,14 @@ public class WebSecurityConf extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-        .authorizeRequests().antMatchers("/css/**").permitAll() // Enable css when logged out
+        .authorizeRequests().antMatchers("/css/**","episodelist").permitAll() // Enable css when logged out
         .and()
-        .authorizeRequests()
+        .authorizeRequests().antMatchers("/delete").hasAuthority("ADMIN")
           .anyRequest().authenticated()
           .and()
       .formLogin()
           .loginPage("/login")
-          .defaultSuccessUrl("/episodelist, /index")
+          .defaultSuccessUrl("/episodelist")
           .permitAll()
           .and()
       .logout()
@@ -40,7 +40,4 @@ public class WebSecurityConf extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());
     }
-    
-    
-    
 }

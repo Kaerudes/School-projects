@@ -8,21 +8,21 @@
 <body>
 	<h1>Edit Episode:</h1>
 	
-	<form th:object="${episode}" th:action="@{save-episode}" action="#" method="post">	
+	<form th:object="${episode}" th:action="@{../save-episode}" action="#" method="post">	
 	<input type="hidden" th:field="*{EpisodeId}" class="form-control"/>
 		  <label for="type">name: </label>
 			<input type="text" id="name" th:field="*{name}" />
 			<br>
-		  	<label for="type">descript: </label>
+		  	<label for="type">director: </label>
 			<input type="text" id="descript" th:field="*{descript}" />
 			<br>
-		  	<label for="type">Airdate: </label>
+		  	<label for="type">airdate: </label>
 			<input type="text" id="airdate" th:field="*{airdate}" />
 			<br>
-			<label for="type">elenght: </label>
+			<label for="type">episode lenght (minutes): </label>
 			<input type="text" id="elenght" th:field="*{elenght}" />
 			<br>
-			<label for="type">Views: </label>
+			<label for="type">Views(millions): </label>
 			<input type="text" id="views" th:field="*{views}" />
 
 		
